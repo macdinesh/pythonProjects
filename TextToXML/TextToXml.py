@@ -13,7 +13,7 @@ class User:
     def update_user_name(self, name):
         self.user_name = name
 
-    def update_user_code(self, code):
+    def update_user_code(self, code): 
         self.user_code = code
 
     def update_user_desc(self, desc):
@@ -41,6 +41,23 @@ class User:
         print ("Date = ", self.tweet_date)
         print ("Tweet = ", self.tweet_list)
         print ("###########################################################")
+
+    def append_user_data(self):
+        xmlBuffer = ""
+        print ("###########################################################")
+        xmlBuffer += "<user name=" + self.user_name + ">"
+        xmlBuffer += "<userCode>" + self.user_code + "</userCode>"
+        xmlBuffer += "<description>" + self.user_desc + "</description>"
+        xmlBuffer += "<noOfFollowers>" + self.no_of_follow + "</noOfFollowers>"
+        xmlBuffer +="<verifiedUser>" + self.user_verified + "</verifiedUser>"
+        
+        xmlBuffer += "<tweetDate>" + self.tweet_date + "</tweetDate>"
+        xmlBuffer += "<TweetText>"+ self.tweet_list + "<TweetText>"
+        xmlBuffer += "</user>"
+        
+        print (xmlBuffer)
+        print ("###########################################################")
+        return xmlBuffer
 
 tempUser = User()
 
@@ -126,8 +143,17 @@ def read_records():
         #Process the last line
         process_record(record_data)
 
+def save_xml_file():
+    #Local variable to store the XML output
+    XMLOutput = ""
+    XMLOutput += tempUser.append_user_data()
+    
+    f = open("output.xml", "w")
+    f.write(XMLOutput)
+    f.close()
 
+#read the data from text file and store in the User class
 read_records()
 
-#process other tags
-tempUser.print_user()
+#serialize the data from class to XML format
+save_xml_file();
