@@ -1,6 +1,6 @@
 import os, re
 
-#User class definition
+#User class definition  
 class User:
     def __init__(self):
             self.user_name = ''
