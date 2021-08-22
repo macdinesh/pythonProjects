@@ -53,7 +53,7 @@ See sample.xml for detailed information about the output structure. The followin
 performed to complete the assessment.
 <ul>
 <li> Designing efficient regular expressions in order to extract the data from your textual dataset </li>
-<li> Storing and submitting the extracted data into an XML file,
+<li> Storing and submitting the extracted data into an XML file, 
 <your_student_number>.xml following the format of sample.xml </li>
 <li> Explaining your code and your methodology in task1_<your_student_number>.ipynb with all the cells’ outputs </li>
 <li>A pdf file, “task1_<your_student_number>.pdf ”. You can first clean all the output in the jupyter notebook task1_<your_student_number>.ipynb and then export it as a pdf file then run all the codes again to make sure your ipynb file has all the outputs. This pdf will be passed to Turnitin for plagiarism check </li>
